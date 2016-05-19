@@ -6,19 +6,21 @@
         "start": "node ./bin/www",
         "stop": "pkill --signal SIGINT hvacController"
     },
+    "license": "Apache-2.0",
     "keywords": [
-    "embedded",
-    "linux",
-    "beagleboard",
-    "beaglebone",
-    "gpio",
-    "bonescript",
-    "octalbonescript"
-  ],
+        "embedded",
+        "linux",
+        "beagleboard",
+        "beaglebone",
+        "hvac"
+    ],
+    "bugs": {
+        "url": "https://github.com/Andrewiski/Beagebone-Hvac-Controller/issues"
+    },
   "homepage": "https://github.com/Andrewiski/Beagebone-Hvac-Controller#readme",
   "repository": {
     "type": "git",
-    "url": "git://https://github.com/Andrewiski/Beagebone-Hvac-Controller/Beagebone-Hvac-Controller.git"
+    "url": "https://github.com/Andrewiski/Beaglebone-Hvac-Controller.git"
   },
   "main": "index.js",
   "engines": {
