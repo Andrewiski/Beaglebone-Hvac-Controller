@@ -1,4 +1,4 @@
-﻿# CTMSoftware.HvacController
+﻿#DE.HvacController
 
 # Beaglebone Server Room Hvac Controller #
 
