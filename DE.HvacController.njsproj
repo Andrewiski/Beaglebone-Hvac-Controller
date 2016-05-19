@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>DE.HvacController</Name>
+    <RootNamespace>DE.HvacController</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>24a74f24-ae88-439c-806a-0b6a258b0354</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>bin\www</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app.js" />
+    <Compile Include="bin\www" />
+    <Compile Include="hvacControllerEmulator.js" />
+    <Compile Include="hvacController.js" />
+    <Compile Include="mcp9808.js" />
+    <Compile Include="public\javascripts\angular\app.js" />
+    <Compile Include="public\javascripts\angular\hvacMonitor.js" />
+    <Compile Include="public\javascripts\angular\hvacMonitorController.js" />
+    <Compile Include="public\javascripts\angular\hvacMonitorService.js" />
+    <Compile Include="public\javascripts\angular\hvacMonitorStateController.js" />
+    <Compile Include="public\javascripts\HvacShared.js" />
+    <Compile Include="public\Scripts\angular-animate.js" />
+    <Compile Include="public\Scripts\angular-animate.min.js" />
+    <Compile Include="public\Scripts\angular-aria.js" />
+    <Compile Include="public\Scripts\angular-aria.min.js" />
+    <Compile Include="public\Scripts\angular-chart.js" />
+    <Compile Include="public\Scripts\angular-chart.min.js" />
+    <Compile Include="public\Scripts\angular-cookies.js" />
+    <Compile Include="public\Scripts\angular-cookies.min.js" />
+    <Compile Include="public\Scripts\angular-loader.js" />
+    <Compile Include="public\Scripts\angular-loader.min.js" />
+    <Compile Include="public\Scripts\angular-message-format.js" />
+    <Compile Include="public\Scripts\angular-message-format.min.js" />
+    <Compile Include="public\Scripts\angular-messages.js" />
+    <Compile Include="public\Scripts\angular-messages.min.js" />
+    <Compile Include="public\Scripts\angular-mocks.js" />
+    <Compile Include="public\Scripts\angular-resource.js" />
+    <Compile Include="public\Scripts\angular-resource.min.js" />
+    <Compile Include="public\Scripts\angular-route.js" />
+    <Compile Include="public\Scripts\angular-route.min.js" />
+    <Compile Include="public\Scripts\angular-sanitize.js" />
+    <Compile Include="public\Scripts\angular-sanitize.min.js" />
+    <Compile Include="public\Scripts\angular-scenario.js" />
+    <Compile Include="public\Scripts\angular-touch.js" />
+    <Compile Include="public\Scripts\angular-touch.min.js" />
+    <Compile Include="public\Scripts\angular-ui-router.js" />
+    <Compile Include="public\Scripts\angular-ui-router.min.js" />
+    <Compile Include="public\Scripts\angular-ui\sortable.js" />
+    <Compile Include="public\Scripts\angular-ui\ui-bootstrap-tpls-dateandtimepickers-0.11.0.js" />
+    <Compile Include="public\Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Compile Include="public\Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Compile Include="public\Scripts\angular-ui\ui-bootstrap.js" />
+    <Compile Include="public\Scripts\angular-ui\ui-bootstrap.min.js" />
+    <Compile Include="public\Scripts\angular-ui\ui-date.js" />
+    <Compile Include="public\Scripts\angular-ui\ui-select\select.js" />
+    <Compile Include="public\Scripts\angular-ui\ui-utils-ieshiv.js" />
+    <Compile Include="public\Scripts\angular-ui\ui-utils-ieshiv.min.js" />
+    <Compile Include="public\Scripts\angular-ui\ui-utils.js" />
+    <Compile Include="public\Scripts\angular-ui\ui-utils.min.js" />
+    <Compile Include="public\Scripts\angular.js" />
+    <Compile Include="public\Scripts\angular.min.js" />
+    <Compile Include="public\Scripts\bootstrap.js" />
+    <Compile Include="public\Scripts\bootstrap.min.js" />
+    <Compile Include="public\Scripts\flot\excanvas.js" />
+    <Compile Include="public\Scripts\flot\excanvas.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.colorhelpers.js" />
+    <Compile Include="public\Scripts\flot\jquery.colorhelpers.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.canvas.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.canvas.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.categories.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.categories.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.crosshair.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.crosshair.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.errorbars.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.errorbars.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.fillbetween.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.fillbetween.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.image.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.image.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.navigate.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.navigate.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.pie.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.pie.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.resize.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.resize.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.selection.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.selection.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.stack.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.stack.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.symbol.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.symbol.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.threshold.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.threshold.min.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.time.js" />
+    <Compile Include="public\Scripts\flot\jquery.flot.time.min.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-001.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-150.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ag.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ai.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-as.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-au.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-bb.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-be.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-bm.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-bs.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-bw.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-bz.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ca.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-cc.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ck.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-cm.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-cx.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-dg.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-dm.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-er.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-fj.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-fk.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-fm.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-gb.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-gd.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-gg.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-gh.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-gi.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-gm.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-gu.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-gy.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-hk.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ie.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-im.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-in.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-io.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-iso.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-je.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-jm.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ke.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ki.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-kn.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ky.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-lc.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-lr.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ls.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-mg.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-mh.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-mo.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-mp.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ms.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-mt.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-mu.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-mw.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-my.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-na.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-nf.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ng.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-nr.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-nu.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-nz.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-pg.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ph.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-pk.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-pn.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-pr.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-pw.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-rw.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-sb.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-sc.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-sd.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-sg.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-sh.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-sl.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ss.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-sx.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-sz.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-tc.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-tk.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-to.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-tt.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-tv.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-tz.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ug.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-um.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-us.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-vc.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-vg.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-vi.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-vu.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-ws.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-za.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-zm.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en-zw.js" />
+    <Compile Include="public\Scripts\i18n\angular-locale_en.js" />
+    <Compile Include="public\Scripts\jquery-2.1.4.js" />
+    <Compile Include="public\Scripts\jquery-2.1.4.min.js" />
+    <Compile Include="public\Scripts\jquery-ui-1.11.4.js" />
+    <Compile Include="public\Scripts\jquery-ui-1.11.4.min.js" />
+    <Compile Include="public\Scripts\jquery.cookie.js" />
+    <Compile Include="public\Scripts\jquery.timer.js" />
+    <Compile Include="public\Scripts\lodash.js" />
+    <Compile Include="public\Scripts\lodash.min.js" />
+    <Compile Include="public\Scripts\modernizr-2.8.3.js" />
+    <Compile Include="public\Scripts\socket.io.js" />
+    <Compile Include="routes\index.js" />
+    <Compile Include="testBone.js" />
+    <Content Include="configs\hvacMonitorConfig.json" />
+    <Content Include="package.json" />
+    <Content Include="public\cache\4822810bc010f73678ad5ea8f52aad5ae5596b67" />
+    <Content Include="public\cache\test.tmp" />
+    <Content Include="configs\hvacControllerConfig.json" />
+    <Content Include="public\favicon.ico" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="public\images\logo.jpg" />
+    <Content Include="public\images\logo.png" />
+    <Content Include="public\index.html" />
+    <Content Include="public\javascripts\angular\hvacMonitor.event.tpl.html" />
+    <Content Include="public\javascripts\angular\hvacMonitor.tpl.html" />
+    <Content Include="public\javascripts\angular\hvacMonitor.view.html" />
+    <Content Include="public\Scripts\angular-animate.min.js.map" />
+    <Content Include="public\Scripts\angular-aria.min.js.map" />
+    <Content Include="public\Scripts\angular-chart.css" />
+    <Content Include="public\Scripts\angular-chart.min.css" />
+    <Content Include="public\Scripts\angular-chart.min.css.map" />
+    <Content Include="public\Scripts\angular-chart.min.js.map" />
+    <Content Include="public\Scripts\angular-cookies.min.js.map" />
+    <Content Include="public\Scripts\angular-csp.css" />
+    <Content Include="public\Scripts\angular-loader.min.js.map" />
+    <Content Include="public\Scripts\angular-message-format.min.js.map" />
+    <Content Include="public\Scripts\angular-messages.min.js.map" />
+    <Content Include="public\Scripts\angular-resource.min.js.map" />
+    <Content Include="public\Scripts\angular-route.min.js.map" />
+    <Content Include="public\Scripts\angular-sanitize.min.js.map" />
+    <Content Include="public\Scripts\angular-touch.min.js.map" />
+    <Content Include="public\Scripts\angular-ui\ui-select\select.css" />
+    <Content Include="public\Scripts\angular.min.js.map" />
+    <Content Include="public\Scripts\errors.json" />
+    <Content Include="public\Scripts\jquery-2.1.4.min.map" />
+    <Content Include="public\stylesheets\bootstrap.min.css" />
+    <Content Include="public\stylesheets\style.css" />
+    <Content Include="public\stylesheets\style.styl" />
+    <Content Include="public\stylesheets\themes\base\accordion.css" />
+    <Content Include="public\stylesheets\themes\base\all.css" />
+    <Content Include="public\stylesheets\themes\base\autocomplete.css" />
+    <Content Include="public\stylesheets\themes\base\base.css" />
+    <Content Include="public\stylesheets\themes\base\button.css" />
+    <Content Include="public\stylesheets\themes\base\core.css" />
+    <Content Include="public\stylesheets\themes\base\datepicker.css" />
+    <Content Include="public\stylesheets\themes\base\dialog.css" />
+    <Content Include="public\stylesheets\themes\base\draggable.css" />
+    <Content Include="public\stylesheets\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="public\stylesheets\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="public\stylesheets\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="public\stylesheets\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="public\stylesheets\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="public\stylesheets\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="public\stylesheets\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="public\stylesheets\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="public\stylesheets\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="public\stylesheets\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="public\stylesheets\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="public\stylesheets\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="public\stylesheets\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="public\stylesheets\themes\base\menu.css" />
+    <Content Include="public\stylesheets\themes\base\progressbar.css" />
+    <Content Include="public\stylesheets\themes\base\resizable.css" />
+    <Content Include="public\stylesheets\themes\base\selectable.css" />
+    <Content Include="public\stylesheets\themes\base\selectmenu.css" />
+    <Content Include="public\stylesheets\themes\base\slider.css" />
+    <Content Include="public\stylesheets\themes\base\sortable.css" />
+    <Content Include="public\stylesheets\themes\base\spinner.css" />
+    <Content Include="public\stylesheets\themes\base\tabs.css" />
+    <Content Include="public\stylesheets\themes\base\theme.css" />
+    <Content Include="public\stylesheets\themes\base\tooltip.css" />
+    <Content Include="public\stylesheets\ui-bootstrap-csp.css" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="public\" />
+    <Folder Include="public\cache\" />
+    <Folder Include="public\fonts\" />
+    <Folder Include="public\images\" />
+    <Folder Include="public\javascripts\" />
+    <Folder Include="public\javascripts\angular\" />
+    <Folder Include="configs\" />
+    <Folder Include="public\Scripts\" />
+    <Folder Include="public\Scripts\angular-ui\" />
+    <Folder Include="public\Scripts\angular-ui\ui-select\" />
+    <Folder Include="public\Scripts\i18n\" />
+    <Folder Include="public\Scripts\flot\" />
+    <Folder Include="public\stylesheets\" />
+    <Folder Include="public\stylesheets\themes\" />
+    <Folder Include="public\stylesheets\themes\base\" />
+    <Folder Include="public\stylesheets\themes\base\images\" />
+    <Folder Include="routes\" />
+    <Folder Include="typings\" />
+    <Folder Include="typings\body-parser\" />
+    <Folder Include="typings\content-type\" />
+    <Folder Include="typings\cookie-parser\" />
+    <Folder Include="typings\debug\" />
+    <Folder Include="typings\depd\" />
+    <Folder Include="typings\express-serve-static-core\" />
+    <Folder Include="typings\express\" />
+    <Folder Include="typings\extend\" />
+    <Folder Include="typings\ini\" />
+    <Folder Include="typings\mathjs\" />
+    <Folder Include="typings\mime\" />
+    <Folder Include="typings\ms\" />
+    <Folder Include="typings\nconf\" />
+    <Folder Include="typings\node\" />
+    <Folder Include="typings\on-finished\" />
+    <Folder Include="typings\serve-favicon\" />
+    <Folder Include="typings\serve-static\" />
+    <Folder Include="typings\socket.io\" />
+    <Folder Include="typings\stylus\" />
+    <Folder Include="typings\verror\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
+    <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
+    <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
+    <TypeScriptCompile Include="typings\content-type\content-type.d.ts" />
+    <TypeScriptCompile Include="typings\content-type\content-type.d.ts" />
+    <TypeScriptCompile Include="typings\content-type\content-type.d.ts" />
+    <TypeScriptCompile Include="typings\cookie-parser\cookie-parser.d.ts" />
+    <TypeScriptCompile Include="typings\cookie-parser\cookie-parser.d.ts" />
+    <TypeScriptCompile Include="typings\cookie-parser\cookie-parser.d.ts" />
+    <TypeScriptCompile Include="typings\debug\debug.d.ts" />
+    <TypeScriptCompile Include="typings\debug\debug.d.ts" />
+    <TypeScriptCompile Include="typings\debug\debug.d.ts" />
+    <TypeScriptCompile Include="typings\depd\depd.d.ts" />
+    <TypeScriptCompile Include="typings\depd\depd.d.ts" />
+    <TypeScriptCompile Include="typings\depd\depd.d.ts" />
+    <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
+    <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
+    <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
+    <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\extend\extend.d.ts" />
+    <TypeScriptCompile Include="typings\extend\extend.d.ts" />
+    <TypeScriptCompile Include="typings\extend\extend.d.ts" />
+    <TypeScriptCompile Include="typings\ini\ini.d.ts" />
+    <TypeScriptCompile Include="typings\ini\ini.d.ts" />
+    <TypeScriptCompile Include="typings\ini\ini.d.ts" />
+    <TypeScriptCompile Include="typings\mathjs\mathjs.d.ts" />
+    <TypeScriptCompile Include="typings\mathjs\mathjs.d.ts" />
+    <TypeScriptCompile Include="typings\mathjs\mathjs.d.ts" />
+    <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\ms\ms.d.ts" />
+    <TypeScriptCompile Include="typings\ms\ms.d.ts" />
+    <TypeScriptCompile Include="typings\ms\ms.d.ts" />
+    <TypeScriptCompile Include="typings\nconf\nconf.d.ts" />
+    <TypeScriptCompile Include="typings\nconf\nconf.d.ts" />
+    <TypeScriptCompile Include="typings\nconf\nconf.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
+    <TypeScriptCompile Include="typings\on-finished\on-finished.d.ts" />
+    <TypeScriptCompile Include="typings\on-finished\on-finished.d.ts" />
+    <TypeScriptCompile Include="typings\on-finished\on-finished.d.ts" />
+    <TypeScriptCompile Include="typings\serve-favicon\serve-favicon.d.ts" />
+    <TypeScriptCompile Include="typings\serve-favicon\serve-favicon.d.ts" />
+    <TypeScriptCompile Include="typings\serve-favicon\serve-favicon.d.ts" />
+    <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\socket.io\socket.io.d.ts" />
+    <TypeScriptCompile Include="typings\socket.io\socket.io.d.ts" />
+    <TypeScriptCompile Include="typings\socket.io\socket.io.d.ts" />
+    <TypeScriptCompile Include="typings\stylus\stylus.d.ts" />
+    <TypeScriptCompile Include="typings\stylus\stylus.d.ts" />
+    <TypeScriptCompile Include="typings\stylus\stylus.d.ts" />
+    <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\verror\verror.d.ts" />
+    <TypeScriptCompile Include="typings\verror\verror.d.ts" />
+    <TypeScriptCompile Include="typings\verror\verror.d.ts" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

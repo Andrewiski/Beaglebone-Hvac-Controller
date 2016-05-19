@@ -1,0 +1,6 @@
+{
+  "name": "Server Room",
+  "eventLogMaxCount": 1000,
+  "debug": false,
+  "tempTarget": 71
+}

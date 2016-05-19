@@ -1,0 +1,69 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "node/node.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "debug/debug.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "cookie-parser/cookie-parser.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "body-parser/body-parser.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "extend/extend.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "nconf/nconf.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "mime/mime.d.ts": {
+      "commit": "8886ae591751e8a8237fa855617745768f0b1bdf"
+    },
+    "express-serve-static-core/express-serve-static-core.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "socket.io/socket.io.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "serve-favicon/serve-favicon.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "express/express.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "stylus/stylus.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "mathjs/mathjs.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "depd/depd.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "on-finished/on-finished.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "ms/ms.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "content-type/content-type.d.ts": {
+      "commit": "d907a0156a86dc4257701d08c736e50679236572"
+    },
+    "verror/verror.d.ts": {
+      "commit": "8886ae591751e8a8237fa855617745768f0b1bdf"
+    },
+    "ini/ini.d.ts": {
+      "commit": "8886ae591751e8a8237fa855617745768f0b1bdf"
+    }
+  }
+}

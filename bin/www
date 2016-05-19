@@ -1,0 +1,12 @@
+﻿#!/usr/bin/env node
+var debug = require('debug')('CTMSoftware.HvacController');
+var app = require('../app');
+
+app.set('port', process.env.PORT || 12334);
+
+var server = app.listen(app.get('port'), function () {
+    debug('Express server listening on port ' + server.address().port);
+});
+
+//used to attach the server to socketIO in app
+app.attachServer(server);

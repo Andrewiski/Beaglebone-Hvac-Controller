@@ -1,0 +1,47 @@
+{
+    "pinLm35": null,
+    "mcp9808I2CDevice": "/dev/i2c-1",
+    "mcp9808I2CAddress": "0x18",
+  "refreshTimerIntervalSeconds": 30,
+  "tempTarget": 70,
+  "tempCorrectionOffset": 0,
+  "tempTolerance": 5,
+  "relays": {
+    "relay1": {
+      "pin": "P9_41",
+      "alias": "Relay 1",
+      "enableOnOverTemp": true,
+      "enableOnUnderTemp": false,
+      "onStateIsHigh": false,
+      "pinIsHigh": false,
+      "isOn": false
+    },
+    "relay2": {
+        "pin": "P9_42",
+        "alias": "Relay 2",
+        "enableOnOverTemp": true,
+        "enableOnUnderTemp": false,
+        "onStateIsHigh": false,
+        "pinIsHigh": false,
+        "isOn": false
+    },
+    "relay3": {
+        "pin": "P9_29",
+        "alias": "Relay 3",
+        "enableOnOverTemp": true,
+        "enableOnUnderTemp": true,
+        "onStateIsHigh": false,
+        "pinIsHigh": false,
+        "isOn": false
+    },
+    "relay4": {
+      "pin": "P9_30",
+      "alias": "Relay 4",
+      "enableOnOverTemp": false,
+      "enableOnUnderTemp": true,
+      "onStateIsHigh": false,
+      "pinIsHigh": false,
+      "isOn": false
+    }
+  }
+}

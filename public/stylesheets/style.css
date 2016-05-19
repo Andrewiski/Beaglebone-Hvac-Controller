@@ -1,0 +1,62 @@
+body {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    /*border:1px solid blue;*/
+}
+
+.navbar-fixed-top{
+    height:80px;
+}
+
+.de_logo{
+    width:132.333px;
+    height:58px;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    /*border:1px solid yellow; */
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Set padding to display errors that occur during databinding */
+.padding-error {
+    padding-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    .nofloat {
+        float: none;
+        padding: 10px 15px;
+    }
+}
+.sidebar{
+    /*border:1px solid red;*/
+}
+.main{
+    /*border:1px solid green;*/
+}
+
+.chartplaceholder {
+    /*border:1px solid red; */
+	width: 100%;
+	height: 400px;
+	font-size: 14px;
+	line-height: 1.2em;
+}
+
+

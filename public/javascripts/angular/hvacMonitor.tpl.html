@@ -1,0 +1,50 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div>
+            <h3>{{data.hvacShared.name}} Temps</h3>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="h5">Room Temp</div>
+                            </div>
+                            <div class="row">
+                                <div class="h1">{{data.hvacShared.temp}}</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="h5">Target Temp</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-1">
+                                    <div class="h1">{{data.hvacShared.tempTarget}}</div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="h4"><a href="" ng-click="tempTargetUp()"><span class="glyphicon glyphicon-arrow-up"></span></a></div>
+                                    <div class="h4"><a href="" ng-click="tempTargetDown()"><span class="glyphicon glyphicon-arrow-down"></span></a></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="chartplaceHolder" class="chartplaceholder">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="ui-button ui-button-text-icon-primary" ng-click="refresh()"><span class="glyphicon glyphicon-refresh"></span>Refresh</div>
+</div>
