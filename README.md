@@ -42,7 +42,11 @@ Connect the BeagleBone to the internet as we need to install some software
  sudo sh -c "echo 'univ-emmc' > /sys/devices/platform/bone_capemgr/slots"
  sudo DEBUG=hvacapp npm start
 ```
+ Now Open a web browser and connect to the Beaglebone.
 
+ <http://192.168.7.2> is your connected via usb port  if not you will need the IP address of the beaglebone which maybe accessable by its host name.
+
+ <http://beaglebone>
 
 ### Configuration ###
 
