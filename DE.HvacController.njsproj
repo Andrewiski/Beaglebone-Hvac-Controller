@@ -349,6 +349,8 @@
     <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
     <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
     <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
+    <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
+    <TypeScriptCompile Include="typings\content-type\content-type.d.ts" />
     <TypeScriptCompile Include="typings\content-type\content-type.d.ts" />
     <TypeScriptCompile Include="typings\content-type\content-type.d.ts" />
     <TypeScriptCompile Include="typings\content-type\content-type.d.ts" />
@@ -357,6 +359,8 @@
     <TypeScriptCompile Include="typings\cookie-parser\cookie-parser.d.ts" />
     <TypeScriptCompile Include="typings\cookie-parser\cookie-parser.d.ts" />
     <TypeScriptCompile Include="typings\cookie-parser\cookie-parser.d.ts" />
+    <TypeScriptCompile Include="typings\cookie-parser\cookie-parser.d.ts" />
+    <TypeScriptCompile Include="typings\debug\debug.d.ts" />
     <TypeScriptCompile Include="typings\debug\debug.d.ts" />
     <TypeScriptCompile Include="typings\debug\debug.d.ts" />
     <TypeScriptCompile Include="typings\debug\debug.d.ts" />
@@ -365,6 +369,8 @@
     <TypeScriptCompile Include="typings\depd\depd.d.ts" />
     <TypeScriptCompile Include="typings\depd\depd.d.ts" />
     <TypeScriptCompile Include="typings\depd\depd.d.ts" />
+    <TypeScriptCompile Include="typings\depd\depd.d.ts" />
+    <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
     <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
     <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
     <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
@@ -373,6 +379,8 @@
     <TypeScriptCompile Include="typings\express\express.d.ts" />
     <TypeScriptCompile Include="typings\express\express.d.ts" />
     <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\extend\extend.d.ts" />
     <TypeScriptCompile Include="typings\extend\extend.d.ts" />
     <TypeScriptCompile Include="typings\extend\extend.d.ts" />
     <TypeScriptCompile Include="typings\extend\extend.d.ts" />
@@ -381,6 +389,8 @@
     <TypeScriptCompile Include="typings\ini\ini.d.ts" />
     <TypeScriptCompile Include="typings\ini\ini.d.ts" />
     <TypeScriptCompile Include="typings\ini\ini.d.ts" />
+    <TypeScriptCompile Include="typings\ini\ini.d.ts" />
+    <TypeScriptCompile Include="typings\mathjs\mathjs.d.ts" />
     <TypeScriptCompile Include="typings\mathjs\mathjs.d.ts" />
     <TypeScriptCompile Include="typings\mathjs\mathjs.d.ts" />
     <TypeScriptCompile Include="typings\mathjs\mathjs.d.ts" />
@@ -389,6 +399,8 @@
     <TypeScriptCompile Include="typings\mime\mime.d.ts" />
     <TypeScriptCompile Include="typings\mime\mime.d.ts" />
     <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\ms\ms.d.ts" />
     <TypeScriptCompile Include="typings\ms\ms.d.ts" />
     <TypeScriptCompile Include="typings\ms\ms.d.ts" />
     <TypeScriptCompile Include="typings\ms\ms.d.ts" />
@@ -397,6 +409,8 @@
     <TypeScriptCompile Include="typings\nconf\nconf.d.ts" />
     <TypeScriptCompile Include="typings\nconf\nconf.d.ts" />
     <TypeScriptCompile Include="typings\nconf\nconf.d.ts" />
+    <TypeScriptCompile Include="typings\nconf\nconf.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
     <TypeScriptCompile Include="typings\node\node.d.ts" />
     <TypeScriptCompile Include="typings\node\node.d.ts" />
     <TypeScriptCompile Include="typings\node\node.d.ts" />
@@ -405,6 +419,8 @@
     <TypeScriptCompile Include="typings\on-finished\on-finished.d.ts" />
     <TypeScriptCompile Include="typings\on-finished\on-finished.d.ts" />
     <TypeScriptCompile Include="typings\on-finished\on-finished.d.ts" />
+    <TypeScriptCompile Include="typings\on-finished\on-finished.d.ts" />
+    <TypeScriptCompile Include="typings\serve-favicon\serve-favicon.d.ts" />
     <TypeScriptCompile Include="typings\serve-favicon\serve-favicon.d.ts" />
     <TypeScriptCompile Include="typings\serve-favicon\serve-favicon.d.ts" />
     <TypeScriptCompile Include="typings\serve-favicon\serve-favicon.d.ts" />
@@ -413,6 +429,8 @@
     <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
     <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
     <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\socket.io\socket.io.d.ts" />
     <TypeScriptCompile Include="typings\socket.io\socket.io.d.ts" />
     <TypeScriptCompile Include="typings\socket.io\socket.io.d.ts" />
     <TypeScriptCompile Include="typings\socket.io\socket.io.d.ts" />
@@ -421,10 +439,13 @@
     <TypeScriptCompile Include="typings\stylus\stylus.d.ts" />
     <TypeScriptCompile Include="typings\stylus\stylus.d.ts" />
     <TypeScriptCompile Include="typings\stylus\stylus.d.ts" />
+    <TypeScriptCompile Include="typings\stylus\stylus.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\verror\verror.d.ts" />
     <TypeScriptCompile Include="typings\verror\verror.d.ts" />
     <TypeScriptCompile Include="typings\verror\verror.d.ts" />
     <TypeScriptCompile Include="typings\verror\verror.d.ts" />
