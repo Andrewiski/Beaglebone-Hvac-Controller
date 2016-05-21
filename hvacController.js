@@ -72,6 +72,7 @@ var HVACController = function (options) {
     }
 
     self.setSetting = function (name, value, save) {
+        var extraData = null
         if (typeof (value) === 'object') {
             extend(settings[name], value);
         } else {
@@ -84,10 +85,11 @@ var HVACController = function (options) {
         switch (name) {
             case "tempTarget":
                 commonData.tempTarget = value;
+                extraData = { tempTarget: settings.tempTarget, tempTolerance: settings.tempTolerance };
                 break;
 
         }
-        self.emit('hvacEvent', { type: "settingsChange", data: { name: name, value: value, date:new Date() } });
+        self.emit('hvacEvent', { type: "settingsChange", data: { name: name, value: value, date: new Date(), extraData: extraData } });
     }
     
     self.getSetting = function (name) {

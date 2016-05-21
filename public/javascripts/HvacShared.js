@@ -120,7 +120,9 @@ var HvacShared = function (options) {
                     case "settingsChange":
                         switch (eventData.data.name) {
                             case "tempTarget":
-                                chartDataSet.data[1].data.push([x, eventData.data.value]);
+                                //chartDataSet.data[1].data.push([x, eventData.data.value]);
+                                chartDataSet.data[1].data.push([x, eventData.data.extraData.tempTarget + eventData.data.extraData.tempTolerance, eventData.data.extraData.tempTarget]);
+                                chartDataSet.data[0].data.push([x, eventData.data.extraData.tempTarget, eventData.data.extraData.tempTarget - eventData.data.extraData.tempTolerance]);
                                 break;
                         }
                         break;

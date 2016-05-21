@@ -48,6 +48,14 @@ Connect the BeagleBone to the internet as we need to install some software
 
  <http://beaglebone>
 
+### Updates ###
+Git commands can be used to get the latest version of posted software
+```
+cd  /var/hvacController
+git pull
+
+```
+
 ### Configuration ###
 
 To setup the tempature sensor and relay pins edit configs/hvacControllerConfig.json.  If you are only using a mcp9808 then set
