@@ -130,7 +130,7 @@ var HVACController = function (options) {
                             var relay = settings.relays[propname];
                             if (relay) {
                                 if (relay.enableOnOverTemp) {
-                                    self.emit('log', { type: "info", msg: 'setting relay ' + relay.alias + ' pin ' + relay.pin + (relay.onStateIsHigh ? 'HIGH' : 'LOW') });
+                                    self.emit('log', { type: "info", msg: 'setting relay ' + relay.alias + ' pin ' + relay.pin + ' ' + (relay.onStateIsHigh ? 'HIGH' : 'LOW') });
                                     if (isBeagleBone) {
                                         
                                         boneScript.digitalWrite(relay.pin, (relay.onStateIsHigh ? boneScript.HIGH : boneScript.LOW), boneScriptPrintStatus);
@@ -155,7 +155,7 @@ var HVACController = function (options) {
                             var relay = settings.relays[propname];
                             if (relay) {
                                 if (relay.enableOnUnderTemp) {
-                                    self.emit('log', { type: "info", msg: 'setting relay ' + relay.alias + ' pin ' + relay.pin + (relay.onStateIsHigh ? 'HIGH' : 'LOW') });
+                                    self.emit('log', { type: "info", msg: 'setting relay ' + relay.alias + ' pin ' + relay.pin + ' ' + (relay.onStateIsHigh ? 'HIGH' : 'LOW') });
                                     if (isBeagleBone) {
                                         boneScript.digitalWrite(relay.pin, (relay.onStateIsHigh ? boneScript.HIGH : boneScript.LOW), boneScriptPrintStatus);
                                     }
@@ -184,7 +184,7 @@ var HVACController = function (options) {
                             var relay = settings.relays[propname];
                             if (relay) {
                                 if (relay.enableOnOverTemp) {
-                                    self.emit('log', { type: "info", msg: 'setting relay ' + relay.alias + ' pin ' + relay.pin + (relay.onStateIsHigh ? 'LOW' : 'HIGH') });
+                                    self.emit('log', { type: "info", msg: 'setting relay ' + relay.alias + ' pin ' + relay.pin + ' ' + (relay.onStateIsHigh ? 'LOW' : 'HIGH') });
                                     if (isBeagleBone) {
                                         boneScript.digitalWrite(relay.pin, (relay.onStateIsHigh ? boneScript.LOW : boneScript.HIGH), boneScriptPrintStatus);
                                     }
@@ -207,7 +207,7 @@ var HVACController = function (options) {
                             var relay = settings.relays[propname];
                             if (relay) {
                                 if (relay.enableOnUnderTemp) {
-                                    self.emit('log', { type: "info", msg: 'setting relay ' + relay.alias + ' pin ' + relay.pin + (relay.onStateIsHigh ? 'LOW' : 'HIGH') });
+                                    self.emit('log', { type: "info", msg: 'setting relay ' + relay.alias + ' pin ' + relay.pin + ' ' + (relay.onStateIsHigh ? 'LOW' : 'HIGH') });
                                     if (isBeagleBone) {
                                         boneScript.digitalWrite(relay.pin, (relay.onStateIsHigh ? boneScript.LOW : boneScript.HIGH), boneScriptPrintStatus);
                                     }

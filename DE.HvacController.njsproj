@@ -301,9 +301,11 @@
     <Content Include="public\stylesheets\themes\base\tooltip.css" />
     <Content Include="public\stylesheets\ui-bootstrap-csp.css" />
     <Content Include="README.md" />
+    <Content Include="service\hvacController.sh" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="service\" />
     <Folder Include="public\" />
     <Folder Include="public\cache\" />
     <Folder Include="public\fonts\" />

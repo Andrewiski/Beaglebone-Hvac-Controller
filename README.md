@@ -48,6 +48,49 @@ Connect the BeagleBone to the internet as we need to install some software
 
  <http://beaglebone>
 
+### Running as Forever Service ###
+Forever can be used to run the hvacController as a service and so it runs all the same.
+```
+sudo npm install -g forever
+sudo mkdir /var/hvacController/logs
+sudo touch /etc/init.d/hvacController
+sudo chmod a+x /etc/init.d/hvacController
+sudo update-rc.d hvacController defaults
+```
+
+```
+sudo nano /etc/init.d/hvacController
+```
+
+```
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          hvacController
+# Required-Start:    $local_fs $network
+# Required-Stop:     $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: hvacController Service
+# Description:       hvacController Service daemon
+### END INIT INFO
+export PATH=$PATH:/usr/local/bin
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+export PORT=80
+
+case "$1" in
+  start)
+  exec forever --sourceDir=/var/hvacController --workingDir /var/hvacController -p /var/hvacController/logs start bin/www
+  ;;
+
+  stop)
+  exec forever stop --sourceDir=/var/hvacController bin/www
+  ;;
+esac
+
+exit 0
+```
+
 ### Updates ###
 Git commands can be used to get the latest version of posted software
 ```
@@ -119,6 +162,8 @@ sudo DEBUG=hvacApp npm start
 ```
 
 ### Future Development ###
+
+Add Email/Text Alerts for temp events
 
 I would like to add additional tempature sensors and allow configurable logic trees based on outside air temp determin if turning on 
 fan to bring in outdoor air would be better then starting the Air Conditioning unit.
