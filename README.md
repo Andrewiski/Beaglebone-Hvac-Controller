@@ -33,13 +33,60 @@ Connect the BeagleBone to the internet as we need to install some software
  sudo apt-get install -y git
  sudo apt-get install -y build-essential g++ python-setuptools python2.7-dev
  sudo apt-get install -y nodejs
+ ```
+
+ Do to missing files in the current console image the following needs to be ran to fix the universal image not being loaded
+ which can be tested by viewing the loaded cape slots.
+ We need the universial cape so that we can access the io pins for i2c and drive the relays.
+ If output does not show  a universal cape then you may have load the universial cape manual or fix the image so it loads at boot.
+
+ ```
+ #show loaded Capes
+ cat /sys/devices/platform/bone_capemgr/slots
+ ```
+
+  ```
+ 0: PF----  -1
+ 1: PF----  -1
+ 2: PF----  -1
+ 3: PF----  -1
+ 4: P-O-L-   0 Override Board Name,00A0,Override Manuf,univ-emmc
+ ```
+
+ If you are missing the universal cape which in example above is slot 4 then
+
+
+ We can load the cape manual like so
+ ```   
+  sudo sh -c "echo 'univ-emmc' > /sys/devices/platform/bone_capemgr/slots"
  
+ ```
+
+To Fix the console image so it loads like it should at boot via the /opt/scripts/boot/am335x_evm.sh that excutes at boot  
+do the following
+
+```
+ cd /opt/source/
+ sudo  git clone https://github.com/cdsteinkuehler/beaglebone-universal-io.git
+ sudo chmod a+rwx /opt/source/beaglebone-universal-io/config-pin
+ cd /usr/local/bin/
+ sudo ln -s /opt/source/beaglebone-universal-io/config-pin config-pin
+```
+after a reboot you should now see the universal cape loaded on boot
+
+``` 
+ cat /sys/devices/platform/bone_capemgr/slots
+```
+
+ 
+
+ Setup hvac Controller
+ ```
  sudo mkdir /var/hvacController
  sudo chmod a+rw /var/hvacController
  cd  /var/hvacController
  git clone https://github.com/Andrewiski/Beaglebone-Hvac-Controller.git .
  npm install
- sudo sh -c "echo 'univ-emmc' > /sys/devices/platform/bone_capemgr/slots"
  sudo DEBUG=hvacapp npm start
 ```
  Now Open a web browser and connect to the Beaglebone.
