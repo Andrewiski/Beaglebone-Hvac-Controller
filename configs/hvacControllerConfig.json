@@ -1,7 +1,9 @@
 {
     "pinLm35": null,
-    "mcp9808I2CDevice": "/dev/i2c-1",
+    "mcp9808I2CDevice": "/dev/i2c-2",
     "mcp9808I2CAddress": "0x18",
+    "adafruitLedI2CDevice": "/dev/i2c-2",
+    "adafruitLedI2CAddress": "0x70",
   "refreshTimerIntervalSeconds": 30,
   "tempTarget": 70,
   "tempCorrectionOffset": 0,

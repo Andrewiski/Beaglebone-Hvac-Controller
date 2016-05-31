@@ -9,16 +9,22 @@ var extend = require('extend');
 var EventEmitter = require('events').EventEmitter;
 var math = require('mathjs');
 var HVACControllerEmulator = require('events').EventEmitter;
-var debug = require('debug')('hvaController');
+var debug = require('debug')('hvacController');
 var nconf = require('nconf');
-var i2c = null;
-var MCP9808 = null;
-var mcp9808 = null;
+
 var HVACController = function (options) {
+    var i2c = null;
+    var MCP9808 = null;
+    var mcp9808 = null;
+    var AdafruitLedBackpack = null;
+    var adafruitLedBackpack = null;
     var self = this;
     var defaultOptions = {
         pinLm35: '',
-        mcp9808I2CAddress: "0x18",
+        mcp9808I2CDevice: null,
+        mcp9808I2CAddress: null,
+        adafruitLedI2CDevice: null,
+        adafruitLedI2CAddress: null,
         refreshTimerIntervalSeconds: 60,
         tempTarget: 75,
         tempCorrectionOffset: -10,
@@ -220,7 +226,12 @@ var HVACController = function (options) {
                     }
                 }
             }
-
+            // Update LED Backpack display if present
+            if (adafruitLedBackpack) {
+                adafruitLedBackpack.writeNumber(parseFloat(temp).toFixed(2), false, function (err) {
+                    debug('wrote to led backpack');
+                });
+            }
             self.emit('hvacEvent', { type: "temp", data: { temp: temp, date: new Date(), tempTarget: settings.tempTarget, tempTolerance: settings.tempTolerance, source: source} });
         }
     }
@@ -274,99 +285,144 @@ var HVACController = function (options) {
 
     var _started = false;
     
-    var init = function (){
-        
-        //for each setting raise a setting change event to let all our listeners know we changed our settings.
-        for (var propname in settings) {
-            if (propname) {
-                self.emit('hvacEvent', { type: "settingsChange", data: { name: propname, value: settings[propname], date: new Date() } });
-            }
-        }
-        
-        if (process.platform !== 'win32') {
-            isBeagleBone = true;
+    var init = function (Callback) {
+        var callbackErrs = [];
+        try {
             
-            //boneScript = require('./octalbonescript/octalbonescript.js');
-            //boneScript = require('bonescript');
-            //diable autoload of cape in octalbone
-            process.env['AUTO_LOAD_CAPE'] = '0';
-            //process.env['DEBUG'] = 'bone';
-            boneScript = require('octalbonescript');
-            boneScript.getPlatform(function (err,x) {
-                debug('bonescript getPlatform');
-                debug('version = ' + x.version);
-                debug('serialNumber = ' + x.serialNumber);
-                debug('dogtag = ' + x.dogtag);
-                self.emit('log', { type: "info", msg: "octalboneScript platform name:" + x.boardName + ', version:' + x.version + ', serialNumber:' + x.serialNumber + ', dogtag:' + x.dogtag });
-            });
-            i2c = require('i2c');
-            MCP9808 = require('./mcp9808.js');
-            mcp9808 = new MCP9808();
-            if (isBeagleBone && objOptions.mcp9808I2CAddress != '') {
-                console.log('attempting mcp9808 read');
-                mcp9808.Initialize({}, function (err) {
-                    
-                    console.log('i2c mcp9808 Inited');
-                    
-                    
-                });
-            }
-            
-        } else {
-            var HvacControllerEmulator = require('./hvacControllerEmulator.js');
-            hvacControllerEmulator = new HvacControllerEmulator();
-            commonData.isEmulationEnabled = true;
-            hvacControllerEmulator.start();
-        }
-        for (var propname in settings.relays) {
-            var relay = settings.relays[propname];
-            if (relay) {
-                commonData.relays[propname] = { pinIsHigh: (relay.onStateIsHigh ? false : true), isOn:false }
-                if (isBeagleBone) {
-                    //Init the relays
-                    boneScript.getPinMode(relay.pin, boneScriptPrintPinMux);
-                    boneScript.pinMode(relay.pin, boneScript.OUTPUT, function (err, x) {
-                        boneScript.digitalWrite(relay.pin, (relay.onStateIsHigh ? boneScript.LOW : boneScript.HIGH), boneScriptPrintStatus);
-                    }
-                        ) //, 7, (settings.pinRelay2OnHigh ? 'pulldown' : 'pullup'), boneScriptPrintStatus);
-                    //init relay to off
-                    
+            //for each setting raise a setting change event to let all our listeners know we changed our settings.
+            for (var propname in settings) {
+                if (propname) {
+                    self.emit('hvacEvent', { type: "settingsChange", data: { name: propname, value: settings[propname], date: new Date() } });
                 }
-                self.emit('hvacEvent', { type: "relay", data: { name:propname, alias: relay.alias, pinIsHigh: commonData.relays[propname].pinIsHigh, isOn: commonData.relays[propname].isOn, date: new Date() } });
+            }
+
+            if (process.platform !== 'win32') {
+                isBeagleBone = true;
+
+                //boneScript = require('./octalbonescript/octalbonescript.js');
+                //boneScript = require('bonescript');
+                //diable autoload of cape in octalbone
+                process.env['AUTO_LOAD_CAPE'] = '0';
+                //process.env['DEBUG'] = 'bone';
+                boneScript = require('octalbonescript');
+                boneScript.getPlatform(function (err, x) {
+                    debug('bonescript getPlatform');
+                    debug('version = ' + x.version);
+                    debug('serialNumber = ' + x.serialNumber);
+                    debug('dogtag = ' + x.dogtag);
+                    self.emit('log', { type: "info", msg: "octalboneScript platform name:" + x.boardName + ', version:' + x.version + ', serialNumber:' + x.serialNumber + ', dogtag:' + x.dogtag });
+                    if (err) {
+                        callbackErrs.push(err);
+                    }
+                });
+                i2c = require('i2c');
+                MCP9808 = require('./mcp9808.js');
+                if (isBeagleBone && objOptions.mcp9808I2CAddress != '') {
+                    mcp9808 = new MCP9808();
+                    debug('attempting mcp9808 init ' + objOptions.mcp9808I2CDevice + '/' + objOptions.mcp9808I2CAddress);
+                    mcp9808.Initialize({ I2CAddress: objOptions.mcp9808I2CAddress, I2CDevice: objOptions.mcp9808I2CDevice }, function (err) {
+
+                        debug('i2c mcp9808 Inited', err);
+                        if (err) {
+                            callbackErrs.push(err);
+                        }
+
+                    });
+                }
+                AdafruitLedBackpack = require('./AdafruitLedBackpack.js');
+
+                if (isBeagleBone && objOptions.adafruitLedI2CDevice != '') {
+                    adafruitLedBackpack = new AdafruitLedBackpack();
+                    debug('attempting adafruitLedBackpack init ' + objOptions.adafruitLedI2CDevice + '/' + objOptions.adafruitLedI2CAddress);
+                    adafruitLedBackpack.Initialize({ I2CAddress: objOptions.adafruitLedI2Address, I2CDevice: objOptions.adafruitLedI2CDevice }, function (err) {
+
+                        debug('i2c adafruitLedBackpack Inited ', err);
+                        if (err) {
+                            callbackErrs.push(err);
+                        }
+
+                    });
+                }
+
+            } else {
+                var HvacControllerEmulator = require('./hvacControllerEmulator.js');
+                hvacControllerEmulator = new HvacControllerEmulator();
+                commonData.isEmulationEnabled = true;
+                hvacControllerEmulator.start();
+            }
+            for (var propname in settings.relays) {
+                var relay = settings.relays[propname];
+                if (relay) {
+                    commonData.relays[propname] = { pinIsHigh: (relay.onStateIsHigh ? false : true), isOn: false }
+                    if (isBeagleBone) {
+                        //Init the relays
+                        boneScript.getPinMode(relay.pin, boneScriptPrintPinMux);
+                        boneScript.pinMode(relay.pin, boneScript.OUTPUT, function (err, x) {
+                            boneScript.digitalWrite(relay.pin, (relay.onStateIsHigh ? boneScript.LOW : boneScript.HIGH), boneScriptPrintStatus);
+                            if (err) {
+                                callbackErrs.push(err);
+                            }
+                        }
+                        ) //, 7, (settings.pinRelay2OnHigh ? 'pulldown' : 'pullup'), boneScriptPrintStatus);
+                        //init relay to off
+
+                    }
+                    self.emit('hvacEvent', { type: "relay", data: { name: propname, alias: relay.alias, pinIsHigh: commonData.relays[propname].pinIsHigh, isOn: commonData.relays[propname].isOn, date: new Date() } });
+                }
+            }
+            if (Callback) {
+                Callback(callbackErrs);
+            }
+        } catch (err) {
+            if (Callback) {
+                callbackErrs.push(err);
+                Callback(callbackErrs);
             }
         }
-
     }
     
 
     var refreshTimer = null;
-    self.start = function () {
+    self.start = function (Callback) {
         _started = true;
-        init();
-        readTemp();
-        if (refreshTimer != null) {
-            //console.log('reconnectTimer != null so clearInterval');
-            self.emit('log', { type: "info", msg: "refreshTimer != null so clearInterval" });
-            clearInterval(reconnectTimer);
-            refreshTimer = null;
-        }
-        
-        //start a timer so that if we get disconnected we reconnect
-        refreshTimer = setInterval(
-            function () {
-                if (_started == true) {
-                    
-                    self.emit('log', { type: "info", msg: "refreshTimer Interval" });
-                    readTemp();
-                    
-                } else {
-                    //we stoped so clear the interval
-                    if (refreshTimer != null) {
-                        clearInterval(refreshTimer);
-                    }
+        var callbackErrs = [];
+        init(function (errs) {
+            try {
                 
+                readTemp();
+                if (refreshTimer != null) {
+                    //console.log('reconnectTimer != null so clearInterval');
+                    self.emit('log', { type: "info", msg: "refreshTimer != null so clearInterval" });
+                    clearInterval(reconnectTimer);
+                    refreshTimer = null;
                 }
-            }, settings.refreshTimerIntervalSeconds * 1000);
+
+                //start a timer so that if we get disconnected we reconnect
+                refreshTimer = setInterval(
+                    function () {
+                        if (_started == true) {
+
+                            self.emit('log', { type: "info", msg: "refreshTimer Interval" });
+                            readTemp();
+
+                        } else {
+                            //we stoped so clear the interval
+                            if (refreshTimer != null) {
+                                clearInterval(refreshTimer);
+                            }
+
+                        }
+                    }, settings.refreshTimerIntervalSeconds * 1000);
+                if (Callback) {
+                    Callback(callbackErrs);
+                }
+            } catch (err) {
+                if (Callback) {
+                    callbackErrs.push(err);
+                    Callback(callbackErrs);
+                }  
+            }
+        });
     }
     
     self.stop = function () {

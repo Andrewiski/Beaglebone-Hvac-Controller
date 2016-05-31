@@ -1,23 +1,23 @@
-﻿//HVACController.Js
-//This Module will connect to the BeagleBone Hardware Pins to read Temp Trip relays, and Drive PWM output to Control HVAC dampers via Op Amp
-//it then raises events based on hardware reading etc
+﻿//mcp9808.Js
+//This Module will connect to the i2c MCP9808 Temp Controller and read the tempature
+
 
 
 
 var util = require('util');
 var extend = require('extend');
 var EventEmitter = require('events').EventEmitter;
-var bonescript = require('octalbonescript');
-//var i2c = require('i2c');
+//var bonescript = require('octalbonescript');
+var i2c = require('i2c');
 var debug = require('debug')('mcp9808');
 
-var mcp9808 = function (options) {
+var mcp9808 = function () {
     var self = this;
     var defaultOptions = {
         I2CAddress: "0x18", //the address of the wire
-        I2CDevice: '/dev/i2c-1'
+        I2CDevice: '/dev/i2c-2'
     }
-    var objOptions = extend({}, defaultOptions, options);
+    
     var isInited = false;
  
 //registers
@@ -50,29 +50,35 @@ var i2cdevice;
 self.Initialize = function (options, Callback) {
     //sets up the device
     //needed to open the cape manager port
+    var objOptions = extend({}, defaultOptions, options);
     debug('i2c new Address ' + objOptions.I2CAddress + " device " + objOptions.I2CDevice);
-    bonescript.i2c.open(objOptions.I2CDevice, objOptions.I2CAddress, function () {
-        debug('bonescript i2c.open handler');
+    //octalbonescript i2c has issues with multiple devices just use i2c instead
+    //bonescript.i2c.open(objOptions.I2CDevice, objOptions.I2CAddress, function () {
+    //    debug('bonescript i2c.open handler');
         
-    }, function (err, port) {
-        console.log('bonescript i2c.open');
-        if (err) {
-            console.log('bonescript i2c.open Error');
-            console.dir(err, { depth: null });
-            isInited = false;
-        } else {
-            isInited = true;
-        }
-        i2cdevice = port;
-        Callback(err);
-    });
-    
-
-    //i2cdevice = new i2c(objOptions.I2CAddress, { device: objOptions.I2CDevice, debug: true }, function () {
-    //    debug('i2c new');
-    //    //self.emit('hvacEvent', { type: "init", data: {} });
-    //    Callback();
+    //}, function (err, port) {
+    //    console.log('bonescript i2c.open');
+    //    if (err) {
+    //        console.log('bonescript i2c.open Error');
+    //        console.dir(err, { depth: null });
+    //        isInited = false;
+    //    } else {
+    //        isInited = true;
+    //    }
+    //    i2cdevice = port;
+    //    Callback(err);
     //});
+    
+    debug('i2c new Address ' + objOptions.I2CDevice + '/' + objOptions.I2CAddress);
+    i2cdevice = new i2c(objOptions.I2CAddress, { device: objOptions.I2CDevice, debug: false });
+    i2cdevice.open(objOptions.I2CDevice,
+        function (err) {
+            debug('i2c open ' + objOptions.I2CDevice + '/' + objOptions.I2CAddress, err); 
+        //self.emit('hvacEvent', { type: "init", data: {} });
+            if (Callback) {
+                Callback(err);
+            }
+    });
 }
 
 //make these private
