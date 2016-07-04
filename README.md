@@ -100,7 +100,7 @@ Forever can be used to run the hvacController as a service and so it runs all th
 ```
 sudo npm install -g forever
 sudo mkdir /var/hvacController/logs
-sudo touch /etc/init.d/hvacController
+sudo cp /var/hvacController/service/hvacController.sh /etc/init.d/hvacController
 sudo chmod a+x /etc/init.d/hvacController
 sudo update-rc.d hvacController defaults
 ```

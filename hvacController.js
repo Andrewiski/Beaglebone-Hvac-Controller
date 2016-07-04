@@ -240,7 +240,7 @@ var HVACController = function (options) {
 
     var readTemp = function () {
         var temp;
-        if (isBeagleBone && objOptions.mcp9808I2CAddress != '') {
+        if (isBeagleBone && mcp9808) {
             //console.log('attempting mcp9808 read');
             mcp9808.AmbientTemperature(function (err, temp) {
                 //makes sure it isn't undefined
@@ -317,7 +317,7 @@ var HVACController = function (options) {
                 });
                 i2c = require('i2c');
                 MCP9808 = require('./mcp9808.js');
-                if (isBeagleBone && objOptions.mcp9808I2CAddress != '') {
+                if (isBeagleBone && objOptions.mcp9808I2CDevice && objOptions.mcp9808I2CDevice != '' && objOptions.mcp9808I2CAddress && objOptions.mcp9808I2CAddress != '') {
                     mcp9808 = new MCP9808();
                     debug('attempting mcp9808 init ' + objOptions.mcp9808I2CDevice + '/' + objOptions.mcp9808I2CAddress);
                     mcp9808.Initialize({ I2CAddress: objOptions.mcp9808I2CAddress, I2CDevice: objOptions.mcp9808I2CDevice }, function (err) {
@@ -331,7 +331,7 @@ var HVACController = function (options) {
                 }
                 AdafruitLedBackpack = require('./AdafruitLedBackpack.js');
 
-                if (isBeagleBone && objOptions.adafruitLedI2CDevice != '') {
+                if (isBeagleBone && objOptions.adafruitLedI2CDevice && objOptions.adafruitLedI2CDevice != '' && objOptions.adafruitLedI2CAddress && objOptions.adafruitLedI2CAddress != '') {
                     adafruitLedBackpack = new AdafruitLedBackpack();
                     debug('attempting adafruitLedBackpack init ' + objOptions.adafruitLedI2CDevice + '/' + objOptions.adafruitLedI2CAddress);
                     adafruitLedBackpack.Initialize({ I2CAddress: objOptions.adafruitLedI2Address, I2CDevice: objOptions.adafruitLedI2CDevice }, function (err) {
