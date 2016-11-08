@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "DE.HvacController", "DE.HvacController.njsproj", "{24A74F24-AE88-439C-806A-0B6A258B0354}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "octalbonescript", "..\octalbonescript\octalbonescript.njsproj", "{3D97B322-4A76-4D81-B950-610564D1D51A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{24A74F24-AE88-439C-806A-0B6A258B0354}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24A74F24-AE88-439C-806A-0B6A258B0354}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24A74F24-AE88-439C-806A-0B6A258B0354}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D97B322-4A76-4D81-B950-610564D1D51A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D97B322-4A76-4D81-B950-610564D1D51A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D97B322-4A76-4D81-B950-610564D1D51A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D97B322-4A76-4D81-B950-610564D1D51A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

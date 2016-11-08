@@ -56,11 +56,16 @@ Connect the BeagleBone to the internet as we need to install some software
  If you are missing the universal cape which in example above is slot 4 then
 
 
- We can load the cape manual like so
+ We can load the cape manual like so for BeagleBone Green
  ```   
+ #BBG
   sudo sh -c "echo 'univ-emmc' > /sys/devices/platform/bone_capemgr/slots"
+ #BBGW
+ sudo sh -c "echo 'univ-bbgw' > /sys/devices/platform/bone_capemgr/slots"
  
  ```
+
+
 
 To Fix the console image so it loads like it should at boot via the /opt/scripts/boot/am335x_evm.sh that excutes at boot  
 do the following

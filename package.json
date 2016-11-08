@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": false,
     "scripts": {
-        "start": "node ./bin/www",
-        "stop": "pkill --signal SIGINT hvacController"
+        "start": "node ./hvacControllerApp.js",
+        "stop": "pkill --signal SIGINT -f \"node ./hvacControllerApp.js\""
     },
     "license": "Apache-2.0",
     "keywords": [
@@ -22,9 +22,9 @@
     "type": "git",
     "url": "https://github.com/Andrewiski/Beaglebone-Hvac-Controller.git"
   },
-  "main": "index.js",
+  "main": "app.js",
   "engines": {
-    "node": ">= 0.10.24"
+    "node": ">= 0.12.13"
   },
   "description": "Digital Example BeagleBone based Hvac Controller for Computer Server Room",
   "author": {

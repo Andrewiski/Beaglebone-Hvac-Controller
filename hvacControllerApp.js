@@ -1,6 +1,6 @@
 ﻿#!/usr/bin/env node
 var debug = require('debug')('hvacapp');
-var app = require('../app');
+var app = require('./app');
 var nconf = require('nconf');
 nconf.file('./configs/hvacMonitorConfig.json');
 var configFileSettings = nconf.get();

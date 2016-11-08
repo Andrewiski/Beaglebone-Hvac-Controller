@@ -64,6 +64,9 @@
     },
     "ini/ini.d.ts": {
       "commit": "8886ae591751e8a8237fa855617745768f0b1bdf"
+    },
+    "serialport/serialport.d.ts": {
+      "commit": "473232e5dbd179e9ee682fab12f796720f37b118"
     }
   }
 }

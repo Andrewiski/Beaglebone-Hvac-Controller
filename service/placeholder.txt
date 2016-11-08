@@ -1,0 +1,1 @@
+﻿pidid file files should go in this folder if started with service script

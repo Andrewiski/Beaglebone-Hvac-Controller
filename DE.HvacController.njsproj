@@ -16,7 +16,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>24a74f24-ae88-439c-806a-0b6a258b0354</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>bin\www</StartupFile>
+    <StartupFile>hvacControllerApp.js</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,7 +25,7 @@
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <ProjectView>ShowAllFiles</ProjectView>
     <NodejsPort>1337</NodejsPort>
-    <StartWebBrowser>true</StartWebBrowser>
+    <StartWebBrowser>True</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,7 +36,7 @@
   <ItemGroup>
     <Compile Include="adafruitLedBackpack.js" />
     <Compile Include="app.js" />
-    <Compile Include="bin\www" />
+    <Compile Include="hvacControllerApp.js" />
     <Compile Include="hvacControllerEmulator.js" />
     <Compile Include="hvacController.js" />
     <Compile Include="mcp9808.js" />
@@ -304,9 +304,9 @@
     <Content Include="public\stylesheets\ui-bootstrap-csp.css" />
     <Content Include="README.md" />
     <Content Include="service\hvacController.sh" />
+    <Content Include="service\placeholder.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\" />
     <Folder Include="service\" />
     <Folder Include="public\" />
     <Folder Include="public\cache\" />
@@ -341,6 +341,7 @@
     <Folder Include="typings\nconf\" />
     <Folder Include="typings\node\" />
     <Folder Include="typings\on-finished\" />
+    <Folder Include="typings\serialport\" />
     <Folder Include="typings\serve-favicon\" />
     <Folder Include="typings\serve-static\" />
     <Folder Include="typings\socket.io\" />
@@ -354,6 +355,12 @@
     <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
     <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
     <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
+    <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
+    <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
+    <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
+    <TypeScriptCompile Include="typings\content-type\content-type.d.ts" />
+    <TypeScriptCompile Include="typings\content-type\content-type.d.ts" />
+    <TypeScriptCompile Include="typings\content-type\content-type.d.ts" />
     <TypeScriptCompile Include="typings\content-type\content-type.d.ts" />
     <TypeScriptCompile Include="typings\content-type\content-type.d.ts" />
     <TypeScriptCompile Include="typings\content-type\content-type.d.ts" />
@@ -366,6 +373,12 @@
     <TypeScriptCompile Include="typings\cookie-parser\cookie-parser.d.ts" />
     <TypeScriptCompile Include="typings\cookie-parser\cookie-parser.d.ts" />
     <TypeScriptCompile Include="typings\cookie-parser\cookie-parser.d.ts" />
+    <TypeScriptCompile Include="typings\cookie-parser\cookie-parser.d.ts" />
+    <TypeScriptCompile Include="typings\cookie-parser\cookie-parser.d.ts" />
+    <TypeScriptCompile Include="typings\cookie-parser\cookie-parser.d.ts" />
+    <TypeScriptCompile Include="typings\debug\debug.d.ts" />
+    <TypeScriptCompile Include="typings\debug\debug.d.ts" />
+    <TypeScriptCompile Include="typings\debug\debug.d.ts" />
     <TypeScriptCompile Include="typings\debug\debug.d.ts" />
     <TypeScriptCompile Include="typings\debug\debug.d.ts" />
     <TypeScriptCompile Include="typings\debug\debug.d.ts" />
@@ -378,6 +391,12 @@
     <TypeScriptCompile Include="typings\depd\depd.d.ts" />
     <TypeScriptCompile Include="typings\depd\depd.d.ts" />
     <TypeScriptCompile Include="typings\depd\depd.d.ts" />
+    <TypeScriptCompile Include="typings\depd\depd.d.ts" />
+    <TypeScriptCompile Include="typings\depd\depd.d.ts" />
+    <TypeScriptCompile Include="typings\depd\depd.d.ts" />
+    <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
+    <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
+    <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
     <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
     <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
     <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
@@ -390,6 +409,12 @@
     <TypeScriptCompile Include="typings\express\express.d.ts" />
     <TypeScriptCompile Include="typings\express\express.d.ts" />
     <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\extend\extend.d.ts" />
+    <TypeScriptCompile Include="typings\extend\extend.d.ts" />
+    <TypeScriptCompile Include="typings\extend\extend.d.ts" />
     <TypeScriptCompile Include="typings\extend\extend.d.ts" />
     <TypeScriptCompile Include="typings\extend\extend.d.ts" />
     <TypeScriptCompile Include="typings\extend\extend.d.ts" />
@@ -402,6 +427,12 @@
     <TypeScriptCompile Include="typings\ini\ini.d.ts" />
     <TypeScriptCompile Include="typings\ini\ini.d.ts" />
     <TypeScriptCompile Include="typings\ini\ini.d.ts" />
+    <TypeScriptCompile Include="typings\ini\ini.d.ts" />
+    <TypeScriptCompile Include="typings\ini\ini.d.ts" />
+    <TypeScriptCompile Include="typings\ini\ini.d.ts" />
+    <TypeScriptCompile Include="typings\mathjs\mathjs.d.ts" />
+    <TypeScriptCompile Include="typings\mathjs\mathjs.d.ts" />
+    <TypeScriptCompile Include="typings\mathjs\mathjs.d.ts" />
     <TypeScriptCompile Include="typings\mathjs\mathjs.d.ts" />
     <TypeScriptCompile Include="typings\mathjs\mathjs.d.ts" />
     <TypeScriptCompile Include="typings\mathjs\mathjs.d.ts" />
@@ -414,6 +445,12 @@
     <TypeScriptCompile Include="typings\mime\mime.d.ts" />
     <TypeScriptCompile Include="typings\mime\mime.d.ts" />
     <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\ms\ms.d.ts" />
+    <TypeScriptCompile Include="typings\ms\ms.d.ts" />
+    <TypeScriptCompile Include="typings\ms\ms.d.ts" />
     <TypeScriptCompile Include="typings\ms\ms.d.ts" />
     <TypeScriptCompile Include="typings\ms\ms.d.ts" />
     <TypeScriptCompile Include="typings\ms\ms.d.ts" />
@@ -426,6 +463,12 @@
     <TypeScriptCompile Include="typings\nconf\nconf.d.ts" />
     <TypeScriptCompile Include="typings\nconf\nconf.d.ts" />
     <TypeScriptCompile Include="typings\nconf\nconf.d.ts" />
+    <TypeScriptCompile Include="typings\nconf\nconf.d.ts" />
+    <TypeScriptCompile Include="typings\nconf\nconf.d.ts" />
+    <TypeScriptCompile Include="typings\nconf\nconf.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
     <TypeScriptCompile Include="typings\node\node.d.ts" />
     <TypeScriptCompile Include="typings\node\node.d.ts" />
     <TypeScriptCompile Include="typings\node\node.d.ts" />
@@ -438,6 +481,14 @@
     <TypeScriptCompile Include="typings\on-finished\on-finished.d.ts" />
     <TypeScriptCompile Include="typings\on-finished\on-finished.d.ts" />
     <TypeScriptCompile Include="typings\on-finished\on-finished.d.ts" />
+    <TypeScriptCompile Include="typings\on-finished\on-finished.d.ts" />
+    <TypeScriptCompile Include="typings\on-finished\on-finished.d.ts" />
+    <TypeScriptCompile Include="typings\on-finished\on-finished.d.ts" />
+    <TypeScriptCompile Include="typings\serialport\serialport.d.ts" />
+    <TypeScriptCompile Include="typings\serialport\serialport.d.ts" />
+    <TypeScriptCompile Include="typings\serve-favicon\serve-favicon.d.ts" />
+    <TypeScriptCompile Include="typings\serve-favicon\serve-favicon.d.ts" />
+    <TypeScriptCompile Include="typings\serve-favicon\serve-favicon.d.ts" />
     <TypeScriptCompile Include="typings\serve-favicon\serve-favicon.d.ts" />
     <TypeScriptCompile Include="typings\serve-favicon\serve-favicon.d.ts" />
     <TypeScriptCompile Include="typings\serve-favicon\serve-favicon.d.ts" />
@@ -450,6 +501,12 @@
     <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
     <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
     <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\socket.io\socket.io.d.ts" />
+    <TypeScriptCompile Include="typings\socket.io\socket.io.d.ts" />
+    <TypeScriptCompile Include="typings\socket.io\socket.io.d.ts" />
     <TypeScriptCompile Include="typings\socket.io\socket.io.d.ts" />
     <TypeScriptCompile Include="typings\socket.io\socket.io.d.ts" />
     <TypeScriptCompile Include="typings\socket.io\socket.io.d.ts" />
@@ -462,12 +519,21 @@
     <TypeScriptCompile Include="typings\stylus\stylus.d.ts" />
     <TypeScriptCompile Include="typings\stylus\stylus.d.ts" />
     <TypeScriptCompile Include="typings\stylus\stylus.d.ts" />
+    <TypeScriptCompile Include="typings\stylus\stylus.d.ts" />
+    <TypeScriptCompile Include="typings\stylus\stylus.d.ts" />
+    <TypeScriptCompile Include="typings\stylus\stylus.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\verror\verror.d.ts" />
+    <TypeScriptCompile Include="typings\verror\verror.d.ts" />
+    <TypeScriptCompile Include="typings\verror\verror.d.ts" />
     <TypeScriptCompile Include="typings\verror\verror.d.ts" />
     <TypeScriptCompile Include="typings\verror\verror.d.ts" />
     <TypeScriptCompile Include="typings\verror\verror.d.ts" />
