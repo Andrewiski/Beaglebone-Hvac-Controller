@@ -31,7 +31,7 @@
         "pin": "P9_29",
         "alias": "Relay 3",
         "enableOnOverTemp": true,
-        "enableOnUnderTemp": true,
+        "enableOnUnderTemp": false,
         "onStateIsHigh": false,
         "pinIsHigh": false,
         "isOn": false
@@ -39,8 +39,8 @@
     "relay4": {
       "pin": "P9_30",
       "alias": "Relay 4",
-      "enableOnOverTemp": false,
-      "enableOnUnderTemp": true,
+      "enableOnOverTemp": true,
+      "enableOnUnderTemp": false,
       "onStateIsHigh": false,
       "pinIsHigh": false,
       "isOn": false

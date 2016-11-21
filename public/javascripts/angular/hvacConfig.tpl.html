@@ -1,0 +1,67 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div>
+            <h3>{{data.hvacShared.name}} Config</h3>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="h5">Room Temp</div>
+                            </div>
+                            <div class="row">
+                                <div class="h1">{{data.hvacShared.temp}}</div>
+                            </div>   
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="h5">Target Temp</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-1">
+                                    <div class="h1">{{data.hvacShared.tempTarget}}</div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="h4"><a href="" ng-click="tempTargetUp()"><span class="glyphicon glyphicon-arrow-up"></span></a></div>
+                                    <div class="h4"><a href="" ng-click="tempTargetDown()"><span class="glyphicon glyphicon-arrow-down"></span></a></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div>
+            <div class="col-xs-12">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-2 h5">Alias</div>
+                        <div class="col-sm-2 h5">Pin</div>
+                        <div class="col-sm-1 h5">Is On</div>
+                        <div class="col-sm-1 h5">OverTemp</div>
+                        <div class="col-sm-1 h5">UnderTemp</div>
+                        <div class="col-sm-1 h5">Onstate Is High</div>
+                        <div class="col-sm-1 h5">Pin Is High</div>
+                    </div>
+                    <div class="row" ng-repeat="(key, relay) in data.hvacShared.relays">
+                        <div class="col-sm-2"><strong>{{relay.alias}}</strong></div>
+                        <div class="col-sm-2">{{relay.pin}}</div>
+                        <div class="col-sm-1"><input type="checkbox" disabled="disabled" checked="{{relay.isOn ? 'checked' : '' }}" /></div>
+                        <div class="col-sm-1"><input type="checkbox" disabled="disabled" checked="{{relay.enableOnOverTemp ? 'checked' : '' }}" /></div>
+                        <div class="col-sm-1"><input type="checkbox" disabled="disabled" checked="{{relay.enableOnUnderTemp ? 'checked' : '' }}" /></div>
+                        <div class="col-sm-1"><input type="checkbox" disabled="disabled" checked="{{relay.onStateIsHigh ? 'checked' : '' }}" /></div>
+                        <div class="col-sm-1"><input type="checkbox" disabled="disabled" checked="{{relay.pinIsHigh ? 'checked' : '' }}" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+    <div class="ui-button ui-button-text-icon-primary" ng-click="refresh()"><span class="glyphicon glyphicon-refresh"></span>Refresh</div>
+</div>

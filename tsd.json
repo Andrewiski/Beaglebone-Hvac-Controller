@@ -67,6 +67,9 @@
     },
     "serialport/serialport.d.ts": {
       "commit": "473232e5dbd179e9ee682fab12f796720f37b118"
+    },
+    "ejs/ejs.d.ts": {
+      "commit": "55978642a28584b258e511046b9fb9d09c8a80a4"
     }
   }
 }

@@ -17,20 +17,30 @@ var app = angular.module('hvacapp',
 /*
 Now config the root application
 */
-app.config(['$compileProvider', '$stateProvider',  '$logProvider', 
-            function ($compileProvider, $stateProvider, $logProvider) {
+app.config(['$compileProvider', '$stateProvider', '$logProvider', '$locationProvider', '$urlRouterProvider',
+    function ($compileProvider, $stateProvider, $logProvider, $locationProvider, $urlRouterProvider) {
         
         try {
 
             $stateProvider.state('home', {
-                url: '',
+                url: '/',
                 templateUrl: '/javascripts/angular/hvacMonitor.view.html',
                 controller: 'hvacMonitorStateController'
             })
-                       
 
+            $stateProvider.state('config', {
+                url: '/app/config',
+                template: '<div data-hvac-config></div>'
+            })
+                       
+            $urlRouterProvider.otherwise(function ($injector, $location) {
+                console.log("bad route $urlRouterProvider.otherwise redirecting to home page");
+                return "/";
+            })
+            //errorHandlerProvider.setDefaultErrorMessage('An Error has occured on the server. Error Code NER100');
+            $locationProvider.html5Mode(true);
         } catch (ex) {
-           // $logToConsole('Fatal Error in app.js config: ' + ex.message);
+           //$logToConsole('Fatal Error in app.js config: ' + ex.message);
         }
 
     }]);

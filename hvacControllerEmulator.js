@@ -13,8 +13,8 @@ var HVACControllerEmulator = function (options) {
         temp: 71.99,
         refreshTimerIntervalSeconds : 1,
         changeDegreesPerInterval: .1,
-        maxTemp: 80,
-        minTemp: 60,
+        maxTemp: 90,
+        minTemp: 50,
         tempChangeUp: true,
     }
     var objOptions = extend({}, defaultOptions, options);

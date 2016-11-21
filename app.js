@@ -5,7 +5,6 @@ var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('hvacapp');
-var routes = require('./routes/index');
 var nconf = require('nconf');
 process.title = "hvacController";
 var app = express();
@@ -18,10 +17,13 @@ var io = new IO();
 var HvacController = require('./hvacController.js')
 var HvacShared = require('./public/javascripts/HvacShared.js');
 
-var hvacController = new HvacController();
+
 
 nconf.file('./configs/hvacMonitorConfig.json');
 var configFileSettings = nconf.get();
+
+var hvacController = new HvacController({ tempTarget: configFileSettings.tempTarget});
+
 var hvacShared = new HvacShared(configFileSettings);
 
 
@@ -56,14 +58,23 @@ hvacController.start();
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 //app.use(logger('dev'));
+var ejs = require('ejs');
+app.engine('html', ejs.renderFile);
+app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+//var router = express.Router();
 
-app.use('/', routes);
-//app.use('/users', users);
+///* GET home page. */
+//router.get('/', function (req, res) {
+//    res.sendFile(path.join(__dirname, 'public/index.html'));
+//});
+app.use('/app/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
 
 //Return the HvacCommon Data
 app.use('/api/hvacController/data', function (req, res) {

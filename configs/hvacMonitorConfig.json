@@ -2,6 +2,6 @@
   "name": "Server Room",
   "eventLogMaxCount": 1000,
   "debug": false,
-    "tempTarget": 71,
-    "webserverPort": 80
+  "tempTarget": 65,
+  "webserverPort": 80
 }

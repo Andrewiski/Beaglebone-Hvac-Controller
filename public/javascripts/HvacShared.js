@@ -183,7 +183,7 @@ var HvacShared = function (options) {
                 //add an Event for eachRelay to record its current state
                 for (var key in commonData.relays) {
                     relay = commonData.relays[key];
-                    dayOfWeekEvents.push({ type: "relay", data: { name:key, alias: relay.alias, pinIsHigh: relay.pinIsHigh, isOn: relay.pinIsHigh, date: new Date() } });
+                    dayOfWeekEvents.push({ type: "relay", data: { name:key, alias: relay.alias, pinIsHigh: relay.pinIsHigh, isOn: relay.isOn, date: new Date() } });
                 }
             }
         }

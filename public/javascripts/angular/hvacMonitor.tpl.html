@@ -4,7 +4,7 @@
             <h3>{{data.hvacShared.name}} Temps</h3>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-2">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="h5">Room Temp</div>
@@ -15,16 +15,16 @@
                             
                         </div>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-4">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="h5">Target Temp</div>
                             </div>
                             <div class="row">
-                                <div class="col-xs-1">
+                                <div class="col-xs-2">
                                     <div class="h1">{{data.hvacShared.tempTarget}}</div>
                                 </div>
-                                <div class="col-xs-1">
+                                <div class="col-xs-6">
                                     <div class="h4"><a href="" ng-click="tempTargetUp()"><span class="glyphicon glyphicon-arrow-up"></span></a></div>
                                     <div class="h4"><a href="" ng-click="tempTargetDown()"><span class="glyphicon glyphicon-arrow-down"></span></a></div>
                                 </div>
@@ -32,6 +32,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-xs-6">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-4 h5">Relays</div>
+                            </div>
+                            <div class="row" ng-repeat="(key, relay) in data.hvacShared.relays">
+                                <div class="col-xs-4"><strong>{{relay.alias}}</strong>&nbsp;<input type="checkbox" disabled="disabled" checked="{{relay.isOn ? 'checked' : '' }}"/></div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>

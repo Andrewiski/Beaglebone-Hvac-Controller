@@ -2,21 +2,21 @@
   "name": "DE.HvacController",
   "version": "0.0.1",
   "private": false,
-    "scripts": {
-        "start": "node ./hvacControllerApp.js",
-        "stop": "pkill --signal SIGINT -f \"node ./hvacControllerApp.js\""
-    },
-    "license": "Apache-2.0",
-    "keywords": [
-        "embedded",
-        "linux",
-        "beagleboard",
-        "beaglebone",
-        "hvac"
-    ],
-    "bugs": {
-        "url": "https://github.com/Andrewiski/Beagebone-Hvac-Controller/issues"
-    },
+  "scripts": {
+    "start": "node ./hvacControllerApp.js",
+    "stop": "pkill --signal SIGINT -f \"node ./hvacControllerApp.js\""
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "embedded",
+    "linux",
+    "beagleboard",
+    "beaglebone",
+    "hvac"
+  ],
+  "bugs": {
+    "url": "https://github.com/Andrewiski/Beagebone-Hvac-Controller/issues"
+  },
   "homepage": "https://github.com/Andrewiski/Beagebone-Hvac-Controller#readme",
   "repository": {
     "type": "git",
@@ -31,20 +31,21 @@
     "name": "adevries",
     "email": "adevries@digitalexample.com"
   },
-    "dependencies": {
-        "octalbonescript": "1.2.0",
-        "body-parser": "^1.14.1",
-        "cookie-parser": "^1.4.0",
-        "debug": "^2.2.0",
-        "express": "^4.13.4",
-        "extend": "^3.0.0",
-        "mathjs": "^2.4.0",
-        "nconf": "0.8.4",
-        "serve-favicon": "^2.3.0",
-        "socket.io": "^1.4.6",
-        "stylus": "^0.54.5",
-        "verror": "1.6.x",
-        "i2c": "0.2.1",
-        "serialport": "2.0.x"
-    }
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "debug": "^2.2.0",
+    "ejs": "^2.5.2",
+    "express": "^4.13.4",
+    "extend": "^3.0.0",
+    "i2c": "0.2.1",
+    "mathjs": "^2.4.0",
+    "nconf": "0.8.4",
+    "octalbonescript": "1.2.0",
+    "serialport": "2.0.x",
+    "serve-favicon": "^2.3.0",
+    "socket.io": "^1.4.6",
+    "stylus": "^0.54.5",
+    "verror": "1.6.x"
+  }
 }

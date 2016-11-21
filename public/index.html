@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>HVAC Controller</title>
+    <base href="/">
     <script src="/Scripts/jquery-2.1.4.min.js"></script>
     <script src="/Scripts/jquery-ui-1.11.4.min.js"></script>
     <script src="/Scripts/lodash.min.js"></script>
@@ -41,7 +42,8 @@
     <script src="/javascripts/angular/hvacMonitorController.js"></script>
     <script src="/javascripts/angular/hvacMonitorStateController.js"></script>
     <script src="/javascripts/angular/hvacMonitorService.js"></script>
-
+    <script src="/javascripts/angular/hvacConfig.js"></script>
+    <script src="/javascripts/angular/hvacConfigController.js"></script>
     
     
 
@@ -69,7 +71,10 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a ng-href="#/">Home</a>
+                        <a ng-href="/">Home</a>
+                    </li>
+                    <li>
+                        <a ng-href="/app/config">Config</a>
                     </li>
                     <!--<li ng-repeat="menuItem in menu.menuItems | filter: filterTopLevelMenuItem">
                         <a ng-href="{{menuItem.linkUrl}}" ng-target="{{ menuItem.linkTarget }}">{{ menuItem.linkText }}</a>

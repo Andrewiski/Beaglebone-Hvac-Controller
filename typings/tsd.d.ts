@@ -19,3 +19,4 @@
 /// <reference path="verror/verror.d.ts" />
 /// <reference path="ini/ini.d.ts" />
 /// <reference path="serialport/serialport.d.ts" />
+/// <reference path="ejs/ejs.d.ts" />
